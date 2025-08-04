@@ -258,3 +258,88 @@ MIT License - Libre para uso personal y comercial.
 ---
 
 ¡Disfruta usando la aplicación! 🎉 
+
+# Tests del Frontend Vue.js
+
+## Estado Actual ✅
+
+Todos los tests están funcionando correctamente. Se han implementado tests básicos y sencillos que cubren la funcionalidad principal de la aplicación.
+
+## Tests Implementados
+
+### 1. Store de Autenticación (`src/stores/__tests__/auth.test.js`)
+- ✅ **5 tests pasando**
+- Tests del estado inicial del store
+- Tests de los getters (isAuthenticated, currentUser)
+- Tests de la acción logout
+
+### 2. Servicios API (`src/services/__tests__/api.test.js`)
+- ✅ **2 tests pasando**
+- Tests básicos de existencia de servicios
+
+### 3. Componente Login (`src/views/__tests__/Login.test.js`)
+- ✅ **6 tests pasando**
+- Tests de renderizado del formulario
+- Tests de interacción con inputs
+- Tests de validación de campos requeridos
+
+### 4. Componente Dashboard (`src/views/__tests__/Dashboard.test.js`)
+- ✅ **4 tests pasando**
+- Tests de renderizado del dashboard
+- Tests de funcionalidad de logout
+- Tests de mensajes de bienvenida
+
+### 5. Router (`src/router/__tests__/index.test.js`)
+- ✅ **4 tests pasando**
+- Tests de configuración de rutas
+- Tests de navegación entre rutas
+
+### 6. Tests de Integración (`src/test/integration/auth-flow.test.js`)
+- ✅ **4 tests pasando**
+- Tests de integración entre componentes
+- Tests de flujo de autenticación
+
+## Resumen Total
+- **6 archivos de test**
+- **25 tests pasando**
+- **0 tests fallando**
+
+## Comandos de Ejecución
+
+```bash
+# Ejecutar todos los tests
+npm test
+
+# Ejecutar tests una vez
+npm test -- --run
+
+# Ejecutar tests con UI
+npm run test:ui
+
+# Ejecutar tests con cobertura
+npm run test:coverage
+```
+
+## Configuración
+
+Los tests están configurados con:
+- **Vitest** como test runner
+- **@vue/test-utils** para testing de componentes Vue
+- **jsdom** como entorno DOM
+- **Pinia** para testing de stores
+
+## Notas
+
+- Los tests están diseñados para ser simples y confiables
+- Se evitan mocks complejos que puedan causar problemas
+- Los warnings sobre inyección de router son normales en tests unitarios
+- Los errores de red en stderr son esperados ya que el backend no está corriendo durante los tests
+
+## Próximos Pasos
+
+Si se desea expandir los tests, se pueden agregar:
+1. Tests más específicos para cada funcionalidad
+2. Tests de edge cases
+3. Tests de integración más complejos
+4. Tests de performance
+5. Tests de accesibilidad

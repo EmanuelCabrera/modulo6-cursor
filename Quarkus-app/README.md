@@ -140,18 +140,24 @@ La aplicación utiliza H2 en memoria por defecto. La configuración se encuentra
 - JWT: Configurado con clave secreta
 - CORS: Habilitado para desarrollo
 
-### Variables de Entorno JWT
+### Configuración JWT
 
-Puedes configurar las siguientes variables de entorno para JWT:
+Las variables de configuración JWT se encuentran en `src/main/resources/application.properties`:
 
-- `JWT_SECRET`: Secreto para firmar los tokens JWT (por defecto: un valor de desarrollo)
-- `JWT_EXPIRATION`: Duración del token en milisegundos (por defecto: 86400000 = 24 horas)
+- `jwt.secret`: Secreto para firmar los tokens JWT (por defecto: un valor de desarrollo)
+- `jwt.expiration`: Duración del token en milisegundos (por defecto: 86400000 = 24 horas)
 
-Ejemplo de archivo `.env`:
-```bash
-JWT_SECRET=tu_secreto_super_seguro_aqui
-JWT_EXPIRATION=86400000
+Puedes modificar estos valores directamente en el archivo `application.properties`:
+
+```properties
+# JWT configuration
+jwt.secret=tu_secreto_super_seguro_aqui
+jwt.expiration=86400000
 ```
+
+También puedes usar variables de entorno para sobrescribir estos valores:
+- `JWT_SECRET`: Para el secreto JWT
+- `JWT_EXPIRATION`: Para la duración del token
 
 ## Ejemplos de Uso
 
